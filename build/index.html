@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900|Playfair+Display:400,400i" rel="stylesheet">
-    <link rel="stylesheet" href="css/libs/slick.css">
+    <link rel="stylesheet" href="css/libs/swiper.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
@@ -50,27 +50,30 @@
 
 <section class="cards">
     <div class="container-fluid">
-        <a href="#" class="card card-green">
-            <svg class="card__icon icon">
-                <use xlink:href="img/symbol-defs.svg#icon-target"></use>
-            </svg>
-            <h4 class="card__title">Продвижение с&nbsp;оплатой за&nbsp;лид</h4>
-            <p class="card__text">Прогноз стоимости до старта</p>
-        </a>
-        <a href="#" class="card card-yellow">
-            <svg class="card__icon icon">
-                <use xlink:href="img/symbol-defs.svg#icon-chart"></use>
-            </svg>
-            <h4 class="card__title">Сквозная аналитика</h4>
-            <p class="card__text" style="margin-bottom: 19px;">От денег на рекламу до денег на&nbsp;закаы</p>
-        </a>
-        <a href="#" class="card card-blue">
-            <svg class="card__icon icon">
-                <use xlink:href="img/symbol-defs.svg#icon-mac"></use>
-            </svg>
-            <h4 class="card__title">Интеграция с CRM</h4>
-            <p class="card__text" style="margin-bottom: 40px">Инструменты повторных продаж</p>
-        </a>
+        <div class="swiper-wrapper">
+            <a href="#" class="card card-green swiper-slide">
+                <svg class="card__icon icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-target"></use>
+                </svg>
+                <h4 class="card__title">Продвижение с&nbsp;оплатой за&nbsp;лид</h4>
+                <p class="card__text">Прогноз стоимости до старта</p>
+            </a>
+            <a href="#" class="card card-yellow swiper-slide">
+                <svg class="card__icon icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-chart"></use>
+                </svg>
+                <h4 class="card__title">Сквозная аналитика</h4>
+                <p class="card__text" style="margin-bottom: 19px;">От денег на рекламу до денег на&nbsp;закаы</p>
+            </a>
+            <a href="#" class="card card-blue swiper-slide">
+                <svg class="card__icon icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-mac"></use>
+                </svg>
+                <h4 class="card__title">Интеграция с CRM</h4>
+                <p class="card__text" style="margin-bottom: 40px">Инструменты повторных продаж</p>
+            </a>
+        </div>
+        <div class="swiper-pagination swiper-pagination-cards"></div>
     </div>
 </section>
 
@@ -182,21 +185,24 @@
 
 <section class="clients">
     <div class="container-fluid">
-        <h3>Наши клиенты</h3>
+        <h3>Наши клиенты</h3>        
         <div class="clients__row clients__row-first">
-            <img src="img/abby.png" alt="">
-            <img src="img/dom.png" alt="">
-            <img src="img/ufd.png" alt="">
-            <img src="img/steklo.png" alt="">
-            <img src="img/pzsp.png" alt="">
-        </div>
-        <div class="clients__row clients__row-second">
-            <img src="img/dev.png" alt="">
-            <img src="img/pmd.png" alt="">
-            <img src="img/med.png" alt="">
-            <img src="img/forward.png" alt="">
-            <img src="img/baseg.png" alt="">
-            <img src="img/lukoil.png" alt="">
+            <img class="swiper-slide" src="img/abby.png" alt="">
+            <img class="swiper-slide" src="img/dom.png" alt="">
+            <img class="swiper-slide" src="img/ufd.png" alt="">
+            <img class="swiper-slide" src="img/steklo.png" alt="">
+            <img class="swiper-slide" src="img/pzsp.png" alt="">
+        </div> 
+        <div class="swiper-container">
+            <div class="clients__row swiper-wrapper clients__row-second">
+                <img class="swiper-slide" src="img/dev.png" alt="">
+                <img class="swiper-slide" src="img/pmd.png" alt="">
+                <img class="swiper-slide" src="img/med.png" alt="">
+                <img class="swiper-slide" src="img/forward.png" alt="">
+                <img class="swiper-slide" src="img/baseg.png" alt="">
+                <img class="swiper-slide" src="img/lukoil.png" alt="">
+            </div>
+            <div class="swiper-pagination swiper-pagination-clients"></div>
         </div>
     </div>
 </section>
@@ -393,7 +399,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/slick.min.js"></script>
+<script src="js/swiper.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

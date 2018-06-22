@@ -229,11 +229,11 @@ h4, .h4 {
 		text-transform: uppercase;	
 		line-height: 1;
 		margin-bottom: 36px;
-		@include r(1023) {font-size: 58px;}
+		@include r(1023) {font-size: 48px;}
 		@include r(767) {font-size: 30px;}
 	}
 	.btn {
-		@include r(1023) {font-size: 28px;}
+		@include r(1023) {font-size: 18px;}
 		@include r(767) {font-size: 16px;}
 		@include r(374) {font-size: 14px;}
 	}
@@ -248,11 +248,8 @@ h4, .h4 {
 		padding-bottom: 50px;
 		padding-left: 15px;
 	}
-	.container-fluid {
-		display: flex;
-		justify-content: center;
-		padding: 0;
-		@include r(767) {display: block;}
+	@include r(413) {
+		padding-left: 0;
 	}
 }
 
@@ -267,14 +264,24 @@ h4, .h4 {
 	padding: 12px 24px;
 	box-shadow: 0 8px 36px rgba(0,0,0,0.2);
 	transform-style: preserve-3d;
+	@include r(1279) {
+		width: 311px;
+	}
 	@include r(1023) {
 		margin: 0;
 		box-shadow: none;
+		width: 244px;
 	}
 	@include r(767) {
 		margin: 0 10px;
 		box-shadow: 0 8px 36px rgba(0,0,0,0.2);
 		width: 345px;
+	}
+	@include r(413) {
+		width: 310px;
+		&:first-child {
+			margin-left: 0;
+		}
 	}
 	&:hover {
 		.card__title, .card__icon, .card__text {transform: translateZ(20px);}
@@ -297,6 +304,12 @@ h4, .h4 {
 		max-width: 92%;
 		margin-bottom: -4px;
 		transition: all .3s ease-in-out;
+		@include r(1023) {
+			font-size: 22px;
+		}
+		@include r(767) {
+			font-size: 26px;
+		}
 	}
 	&__icon {
 		font-size: 33px;
@@ -423,6 +436,9 @@ h4, .h4 {
 				margin-left: 18%;
 				margin-right: 10px;
 				font-size: 25px;
+			}
+			@include r(374) {
+				margin-left: 8%;
 			}
 		}
 	}
@@ -562,6 +578,22 @@ h4, .h4 {
 	@include r(767) {
 		.clients__row-first {display: none;}
 	}
+	.swiper-container {
+		@include r(767) {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: -15px;
+				left: -15px;
+				bottom: 0;
+				background: #fff;
+				opacity: 0.75;
+				z-index: 5;
+				pointer-events: none;
+			}
+		}
+	}
 	&__row {
 		display: flex;
 		justify-content: space-between;
@@ -581,13 +613,12 @@ h4, .h4 {
 			z-index: 5;
 			pointer-events: none;
 			@include r(767) {
-				left: -15px;
-				right: -15px;
+				display: none;
 			}
 		}
 		img {
 			filter: grayscale(1);
-			@include r(1023) {width: 85px;}
+			//@include r(767) {margin: 0 15px}
 		}
 	}
 }
@@ -940,3 +971,55 @@ h4, .h4 {
 		}
 	}
 }
+
+.swiper-pagination-bullet {
+	background: transparent;
+	color: transparent;
+	border-radius: 50%;
+	border: 1px solid $gray;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	transition: all .3s ease-in-out;
+	&:hover, &:focus {outline: none;}
+}
+
+.swiper-pagination-bullet-active {
+	background: $gray;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+	bottom: 0;
+}
+
+@media (min-width: 1025px) {
+	.cards .swiper-wrapper {
+		display: flex;
+		justify-content: center;
+		padding: 0;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.cards .swiper-wrapper {
+		display: flex;
+		justify-content: flex-start;
+		padding: 0;
+	}
+	.cards .card:first-child {
+		margin-left: 0;
+	}
+}
+
+@media (min-width: 1024px){
+	.clients__row img {
+		width: auto!important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.clients__row img {
+		width: 85px!important;
+	}
+}
+

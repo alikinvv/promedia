@@ -6,20 +6,35 @@ $(document).ready(function () {
             var $this = $(this);
             $('.clients__row-second').append($this);
         });
-        $('.cards .container-fluid').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            variableWidth: true,
-            dots: true,
-            arrows: false,
-        });
-        $('.clients__row-second').slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            variableWidth: true,
-            dots: true,
-            arrows: false,
-        });
+        var swiper = new Swiper('.cards .container-fluid', {
+            slidesPerView: 'auto',
+            pagination: {
+              el: '.swiper-pagination-cards',
+              clickable: true,
+            },
+          });
+          var swiper = new Swiper('.clients .swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            pagination: {
+              el: '.swiper-pagination-clients',
+              clickable: true,
+            },
+          });
+        // $('.cards .container-fluid').slick({
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        //     variableWidth: true,
+        //     dots: true,
+        //     arrows: false,
+        // });
+        // $('.clients__row-second').slick({
+        //     slidesToShow: 4,
+        //     slidesToScroll: 4,
+        //     variableWidth: true,
+        //     dots: true,
+        //     arrows: false,
+        // });
     }
 
     if(windowWidth >= 1025) {
