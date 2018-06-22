@@ -15,7 +15,7 @@ $(document).ready(function () {
           });
           var swiper = new Swiper('.clients .swiper-container', {
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 20,
             pagination: {
               el: '.swiper-pagination-clients',
               clickable: true,
