@@ -134,6 +134,9 @@ h3, .h3 {
 	font-size: 36px;
 	text-transform: uppercase;
 	font-style: normal;
+	@include r(767) {
+		font-size: 30px;
+	}
 }
 
 h4, .h4 {
@@ -504,7 +507,8 @@ h4, .h4 {
 				background-image: url(../img/approach-long.png);
 				background-position: -33px -82px;
 			}
-			@include r(374) {background-position: -24px -106px;}
+			@include r(374) {background-position: -29px -127px;}
+			@include r(359) {background-position: -24px -106px;}
 		}
 	}
 	&__bg {
@@ -849,7 +853,6 @@ h4, .h4 {
 					color: #fff;
 					opacity: 0.5;
 					transition: all .3s ease-in-out;
-					font-family: 'Playfair Display', serif;
 					font-style: normal;
 					&:hover {opacity: 1;}
 				}
